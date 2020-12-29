@@ -50,4 +50,13 @@ public class RESTAssuredEmployeeJSONTests {
         response.then().body("name", Matchers.is("Lisa"));
         response.then().body("salary", Matchers.is("10000"));
     }
+
+    @Test
+    public void onCallingList_ReturnEmployeeList(){
+        Response response = getEmployeeList();
+        System.out.println("AT FIRST: " + response.asString());
+        response.then().body("id",Matchers.hasItems(1,3,6,7,8));
+        response.then().body("name", Matchers.hasItem("Lisa"));
+
+    }
 }
