@@ -37,18 +37,17 @@ public class RESTAssuredEmployeeJSONTests {
         response.then().body("name", Matchers.is("Hayato"));
     }
 
-    /*@Test
+    @Test
     public void givenEmployee_OnUpdate_ShouldReturnUpdatedEmployee(){
         Response response = RestAssured.given()
                             .contentType(ContentType.JSON)
                             .accept(ContentType.JSON)
                             .body("{\"name\": \"Lisa\", \"salary\": \"10000\"}")
                             .when()
-                            .put("/employees/update/"+empId);
+                            .put("/employees/3");
         String respAsStr = response.asString();
         response.then().body("id", Matchers.any(Integer.class));
         response.then().body("name", Matchers.is("Lisa"));
         response.then().body("salary", Matchers.is("10000"));
     }
-     */
 }
